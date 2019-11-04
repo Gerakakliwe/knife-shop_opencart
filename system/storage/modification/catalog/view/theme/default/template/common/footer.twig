@@ -1,0 +1,111 @@
+<footer>
+  <div class="container">
+    <div class="row">
+      {% if informations %}
+      <div class="col-sm-3">
+        <h5>{{ text_information }}</h5>
+        <ul class="list-unstyled">
+         {% for information in informations %}
+          <li><a href="{{ information.href }}">{{ information.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      <div class="col-sm-3">
+        <h5>{{ text_service }}</h5>
+        <ul class="list-unstyled">
+          <li><a href="{{ contact }}">{{ text_contact }}</a></li>
+          <li><a href="{{ return }}">{{ text_return }}</a></li>
+          <li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h5>{{ text_extra }}</h5>
+        <ul class="list-unstyled">
+          <li><a href="{{ manufacturer }}">{{ text_manufacturer }}</a></li>
+          <li><a href="{{ voucher }}">{{ text_voucher }}</a></li>
+          <li><a href="{{ affiliate }}">{{ text_affiliate }}</a></li>
+          <li><a href="{{ special }}">{{ text_special }}</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h5>{{ text_account }}</h5>
+        <ul class="list-unstyled">
+          <li><a href="{{ account }}">{{ text_account }}</a></li>
+          <li><a href="{{ order }}">{{ text_order }}</a></li>
+          <li><a href="{{ wishlist }}">{{ text_wishlist }}</a></li>
+          <li><a href="{{ newsletter }}">{{ text_newsletter }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <p>{{ powered }}</p>
+  </div>
+</footer>
+{% for script in scripts %}
+<script src="{{ script }}" type="text/javascript"></script>
+{% endfor %}
+<!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+
+                                {% if module_cookiepolicy_status == "1" %}
+					<script type="text/javascript" >
+						var text_before = "{{ module_cookiepolicy_cookietext.text[langcode] }}";
+						var link_text = "{% if module_cookiepolicy_infopage > 0 %} {{ module_cookiepolicy_infopage_title }} {% elseif module_cookiepolicy_random_url == 1 %} {{ module_cookiepolicy_urltext.text[langcode] }}{% endif %}";
+						var text_after = "{{ module_cookiepolicy_cookietext_after.text[langcode] }}";
+						var accept_text = "{{ module_cookiepolicy_buttontext.text[langcode] }}";
+						var cookie_url = "{% if module_cookiepolicy_infopage > 0 %} {{ module_cookiepolicy_infopage_url }} {% elseif module_cookiepolicy_random_url == 1 %} {{ module_cookiepolicy_url }}{% endif %}";
+						var cookie_expires = {{ module_cookiepolicy_cookie_expires }};
+						var text_align = "{{ module_cookiepolicy_text_align }}";
+					</script>
+					<script src="catalog/view/javascript/jquery.cookie.js"></script>
+					<script src="catalog/view/javascript/jquery.cookiecuttr.js"></script>
+					<link rel="stylesheet" href="catalog/view/javascript/cookiepolicy.css">
+					<style>
+						a.cc-cookie-accept {
+							color: {{ module_cookiepolicy_accept_text_colour }} !important;
+							background: {{ module_cookiepolicy_accept_button_colour }};
+						}
+						a.cc-cookie-accept:hover {
+							color: {{ module_cookiepolicy_accept_text_hover }} !important;
+							background: {{ module_cookiepolicy_accept_button_hover }};
+						}
+						.cc-cookies, .cc-cookies a {
+							color: {{ module_cookiepolicy_text_colour }};
+						}
+						.cc-cookies:before {
+							opacity: {{ module_cookiepolicy_opacity }};
+							background: {{ module_cookiepolicy_background_colour }};
+						}
+						{% if module_cookiepolicy_rounded_corners %}
+							a.cc-cookie-accept {
+								-webkit-border-radius: 3px 3px 3px 3px;
+								border-radius: 3px 3px 3px 3px;
+							}
+						{% endif %}
+					</style>
+					
+                                    {% if module_cookiepolicy_position == "1" %} 
+                                        {{ '<style>.cc-cookies{bottom:0;}</style>' }}
+                                    {% elseif module_cookiepolicy_position == "2" %}
+                                        {{ '<style>.cc-cookies{top:0;}</style>' }}
+                                    {% elseif module_cookiepolicy_position == "3" %}
+                                        {{ '<style>.cc-cookies{padding:15%; height:100%; top:0;}</style>' }}
+                                    {% endif %}
+
+					<script>
+						$(document).ready(function () {
+							$.cookieCuttr();	
+						});
+					</script>
+				{% endif %}
+			
+
+				<script src="catalog/view/javascript/jquery.elevatezoom.min.js" type="text/javascript"></script>
+				<script type="text/javascript">
+$(document).ready(function(){$("#zoom_01").elevateZoom({cursor:"crosshair",zoomWindowFadeIn:500,zoomWindowFadeOut:750,lensFadeIn:500,lensFadeOut:500})}),$(window).on("resize",function(){var o=$(this);$("#zoom_01").elevateZoom(o.width()<900?{cursor:"crosshair",zoomType:"inner",zoomWindowFadeIn:500,zoomWindowFadeOut:750,lensFadeIn:500,lensFadeOut:500}:{cursor:"crosshair",zoomType:"window",zoomWindowFadeIn:500,zoomWindowFadeOut:750,lensFadeIn:500,lensFadeOut:500})});
+				</script>  
+			
+</body></html>

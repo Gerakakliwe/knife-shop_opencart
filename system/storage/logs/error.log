@@ -1,0 +1,7 @@
+2019-11-01 16:48:17 - PHP Warning:  unlink(C:/xampp/htdocs/eshop/upload/system/storage/cache/cache.article.total.1.0.1.fe25175129461e57e31dedaf0534c733.1572563722): No such file or directory in C:\xampp\htdocs\eshop\upload\system\library\cache\file.php on line 17
+2019-11-01 16:48:17 - PHP Warning:  unlink(C:/xampp/htdocs/eshop/upload/system/storage/cache/cache.order_status.1.1572561591): No such file or directory in C:\xampp\htdocs\eshop\upload\system\library\cache\file.php on line 17
+2019-11-01 16:48:17 - PHP Warning:  unlink(C:/xampp/htdocs/eshop/upload/system/storage/cache/cache.weight_class.1.1572561876): No such file or directory in C:\xampp\htdocs\eshop\upload\system\library\cache\file.php on line 17
+2019-11-02 19:11:17 - PHP Warning:  rmdir(C:/xampp/htdocs/eshop/upload/image/cache/catalog): Directory not empty in C:\xampp\htdocs\eshop\upload\admin\controller\common\developer.php on line 242
+2019-11-02 19:11:17 - PHP Warning:  rmdir(C:/xampp/htdocs/eshop/upload/system/storage/cache/fe): Directory not empty in C:\xampp\htdocs\eshop\upload\admin\controller\common\developer.php on line 73
+2019-11-03 19:36:14 - PHP Warning:  rmdir(C:/xampp/htdocs/eshop/upload/image/cache/catalog/demo): No such file or directory in C:\xampp\htdocs\eshop\upload\admin\controller\common\developer.php on line 242
+2019-11-04 15:19:51 - PHP Warning:  rmdir(C:/xampp/htdocs/eshop/upload/image/cache/catalog/demo): No such file or directory in C:\xampp\htdocs\eshop\upload\admin\controller\common\developer.php on line 242

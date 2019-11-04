@@ -1,0 +1,2215 @@
+2019-11-03 21:59:20 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: View from admin page
+
+FILE: admin/controller/catalog/product.php
+CODE: if (isset($this->request->post['selected']) && $this->validateDelete()) {
+LINE: 203
+CODE: if (isset($this->request->post['selected']) && $this->validateCopy()) {
+LINE: 293
+CODE: $data['products'][] = array(
+LINE: 656
+CODE: $data['cancel'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . $url, true);
+LINE: 994
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: <div class="table-responsive">
+LINE: 240
+CODE: <td class="text-right"><a href="{{ product.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: <button type="submit" form="form-product" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+LINE: 10
+
+FILE: admin/controller/catalog/category.php
+CODE: $data['categories'][] = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/category_list.twig
+CODE: <td class="text-right"><a href="{{ category.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: <button type="submit" form="form-category" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+LINE: 10
+
+FILE: admin/controller/catalog/information.php
+CODE: $data['informations'][] = array(
+LINE: 182
+CODE: $data['informations'][] = array(
+LINE: 185
+CODE: $data['cancel'] = $this->url->link('catalog/information', 'user_token=' . $this->session->data['user_token'] . $url, true);
+LINE: 340
+
+FILE: admin/view/template/catalog/information_list.twig
+CODE: <td class="text-right"><a href="{{ information.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: <button type="submit" form="form-information" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+LINE: 10
+
+FILE: admin/controller/catalog/manufacturer.php
+CODE: $data['manufacturers'][] = array(
+LINE: 180
+CODE: $data['manufacturers'][] = array(
+LINE: 183
+CODE: $data['cancel'] = $this->url->link('catalog/manufacturer', 'user_token=' . $this->session->data['user_token'] . $url, true);
+LINE: 332
+
+FILE: admin/view/template/catalog/manufacturer_list.twig
+CODE: <td class="text-right"><a href="{{ manufacturer.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: <button type="submit" form="form-manufacturer" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+LINE: 10
+----------------------------------------------------------------
+MOD: OCappLab Alert In admin
+
+FILE: admin/controller/common/header.php
+CODE: $this->load->model('user/user');
+LINE: 83
+
+FILE: admin/view/template/common/header.twig
+CODE: <ul class="nav navbar-nav navbar-right">
+LINE: 73
+
+FILE: admin/language/en-gb/common/header.php
+CODE: $_['text_logout']        = 'Logout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/language/ru-ru/common/header.php
+CODE: <?php
+LINE: 13
+----------------------------------------------------------------
+MOD: Block with feedback
+
+FILE: admin/controller/setting/setting.php
+CODE: $data['captcha_pages'] = array();
+LINE: 664
+
+FILE: admin/language/en-gb/setting/setting.php
+CODE: $_['heading_title']
+LINE: 8
+
+FILE: admin/language/ru-ru/setting/setting.php
+CODE: $_['heading_title']
+LINE: 8
+
+FILE: catalog/controller/common/header.php
+CODE: $data['menu'] = $this->load->controller('common/menu');
+LINE: 116
+CODE: return $this->load->view('common/header', $data);
+LINE: 159
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: <li><a href="{{ contact }}"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md">{{ telephone }}</span></li>
+LINE: 63
+CODE: <header>
+LINE: 142
+
+FILE: catalog/view/theme/oc-light/template/common/header.twig
+CODE: <li><a href="{{ contact }}"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md">{{ telephone }}</span></li>
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: d_ajax_search
+CODE: public function index() {
+LINE: 6
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 341
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 357
+
+FILE: admin/model/setting/extension.php
+CODE: $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "extension_path` WHERE `extension_install_id` = '" . (int)$extension_install_id . "' ORDER BY `date_added` ASC");
+LINE: 72
+
+FILE: admin/model/setting/modification.php
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "modification` WHERE `extension_install_id` = '" . (int)$extension_install_id . "'");
+LINE: 11
+
+FILE: admin/controller/marketplace/install.php
+CODE: $this->model_setting_extension->deleteExtensionInstall($extension_install_id);
+LINE: 506
+CODE: $this->model_setting_modification->deleteModificationsByExtensionInstallId($extension_install_id);
+LINE: 514
+
+FILE: admin/controller/common/filemanager.php
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+LINE: 47
+CODE: 'jpg',
+LINE: 241
+CODE: 'image/jpeg',
+LINE: 254
+
+FILE: admin/view/template/common/filemanager.twig
+CODE: <img src="{{ image.thumb }}" alt="{{ image.name }}" title="{{ image.name }}" />
+LINE: 33
+CODE: </header>
+LINE: 99
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/localisation/language.php
+CODE: $language_data = $this->cache->get('language');
+LINE: 9
+
+FILE: system/config/catalog.php
+CODE: 'view/*/before' => array(
+LINE: 58
+CODE: 'controller/*/after'  => array(
+LINE: 63
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $template = new Template($this->registry->get('config')->get('template_engine'));
+LINE: 118
+
+FILE: system/library/template.php
+CODE: public function __construct($adaptor) {
+LINE: 21
+CODE: $this->adaptor = new $class();
+LINE: 28
+CODE: private $data = array();
+LINE: 8
+CODE: public function __construct() {
+LINE: 10
+CODE: \Twig_Autoloader::register();
+LINE: 21
+CODE: $this->twig = new \Twig_Environment($loader, $config);
+LINE: 54
+
+FILE: catalog/controller/event/theme.php
+CODE: $twig = new \Twig_Environment($loader, $config);
+LINE: 26
+----------------------------------------------------------------
+MOD: Extra_email_opencart.3
+
+FILE: catalog/controller/mail/order.php
+CODE: $data['text_footer'] = $language->get('text_footer');
+LINE: 87
+CODE: if ($order_info['payment_address_format']) {
+LINE: 124
+CODE: 'model'    => $order_product['model'],
+LINE: 227
+LINE: 425
+CODE: $data['products'][] = array(
+LINE: 226
+LINE: 429
+CODE: public function alert(&$route, &$args) {
+LINE: 345
+CODE: $mail->send();
+LINE: 305
+
+FILE: catalog/view/theme/default/template/mail/order_add.twig
+CODE: <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;">{{ product.name }}
+LINE: 81
+----------------------------------------------------------------
+MOD: Featured Plus
+
+FILE: admin/controller/extension/module/featured.php
+CODE: if (isset($this->request->post['status']))
+LINE: 165
+
+FILE: admin/view/template/extension/module/featured.twig
+CODE: <div class="form-group">
+LINE: 66
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: $products =
+LINE: 30
+
+FILE: admin/language/en-gb/extension/module/featured.php
+CODE: <?php
+LINE: 6
+
+FILE: admin/language/ru-ru/extension/module/featured.php
+CODE: <?php
+LINE: 6
+----------------------------------------------------------------
+MOD: Fix Filter Opencart 3.x
+
+FILE: catalog/model/catalog/product.php
+CODE: $sql .= " AND pf.filter_id IN (" . implode(',', $implode) . ")";
+LINE: 134
+LINE: 525
+CODE: $sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
+LINE: 201
+LINE: 602
+----------------------------------------------------------------
+MOD: Madeshop Modification
+
+FILE: catalog/controller/product/category.php
+CODE: $data['products'][] = array(
+LINE: 220
+
+FILE: catalog/controller/product/manufacturer.php
+CODE: $data['products'][] = array(
+LINE: 217
+
+FILE: catalog/controller/product/search.php
+CODE: $data['products'][] = array(
+LINE: 230
+
+FILE: catalog/controller/product/special.php
+CODE: $data['products'][] = array(
+LINE: 120
+
+FILE: catalog/controller/extension/module/latest.php
+CODE: $data['products'][] = array(
+LINE: 52
+
+FILE: catalog/controller/extension/module/bestseller.php
+CODE: $data['products'][] = array(
+LINE: 45
+
+FILE: catalog/controller/extension/module/special.php
+CODE: $data['products'][] = array(
+LINE: 52
+
+FILE: catalog/controller/product/product.php
+CODE: $data['products'][] = array(
+LINE: 426
+CODE: $data['products'][] = array(
+LINE: 66
+
+FILE: catalog/view/theme/default/template/product/category.twig
+CODE: <div class="image">
+LINE: 130
+
+FILE: catalog/view/theme/oc-light/template/product/category.twig
+CODE: <div class="image">
+LINE: 130
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: <div class="image">
+LINE: 311
+
+FILE: catalog/view/theme/oc-light/template/product/product.twig
+CODE: <div class="image">
+LINE: 372
+
+FILE: catalog/view/theme/default/template/product/search.twig
+CODE: <div class="image">
+LINE: 115
+
+FILE: catalog/view/theme/oc-light/template/product/search.twig
+CODE: <div class="image">
+LINE: 115
+
+FILE: catalog/view/theme/default/template/product/special.twig
+CODE: <div class="image">
+LINE: 72
+
+FILE: catalog/view/theme/default/template/extension/module/latest.twig
+CODE: <div class="image">
+LINE: 4
+
+FILE: catalog/view/theme/oc-light/template/extension/module/latest.twig
+CODE: <div class="image">
+LINE: 6
+
+FILE: catalog/view/theme/default/template/extension/module/bestseller.twig
+CODE: <div class="image">
+LINE: 5
+
+FILE: catalog/view/theme/oc-light/template/extension/module/bestseller.twig
+CODE: <div class="image">
+LINE: 7
+
+FILE: catalog/view/theme/default/template/extension/module/special.twig
+CODE: <div class="image">
+LINE: 4
+
+FILE: catalog/view/theme/default/template/extension/module/featured.twig
+CODE: <div class="image">
+LINE: 5
+
+FILE: catalog/view/theme/oc-light/template/extension/module/featured.twig
+CODE: <div class="image">
+LINE: 7
+CODE: {% for script in scripts %}
+LINE: 41
+CODE: {% for script in scripts %}
+LINE: 30
+----------------------------------------------------------------
+MOD: Пароль в письме о регистрации
+
+FILE: catalog/controller/mail/register.php
+CODE: $data['login'] = $this->url->link('account/login', '', true);
+LINE: 31
+
+FILE: catalog/view/theme/default/template/mail/register.twig
+CODE: {{ login }}
+LINE: 11
+LINE: 26
+
+FILE: catalog/language/ru-ru/mail/register.php
+CODE: <?php
+LINE: 4
+
+FILE: catalog/language/en-gb/mail/register.php
+CODE: <?php
+LINE: 4
+----------------------------------------------------------------
+MOD: Перетаскивание модулей в макетах
+
+FILE: admin/controller/design/layout.php
+CODE: protected function getForm() {
+LINE: 251
+
+FILE: admin/view/template/design/layout_form.twig
+CODE: {{ footer }}
+LINE: 445
+----------------------------------------------------------------
+MOD: Українська мова / Украинский язык
+----------------------------------------------------------------
+MOD: Форма авторизации в шапке
+CODE: </head>
+LINE: 60
+CODE: {{ language }}
+LINE: 81
+CODE: </head>
+LINE: 50
+CODE: {{ language }}
+LINE: 71
+----------------------------------------------------------------
+2019-11-03 22:02:46 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: View from admin page
+
+FILE: admin/controller/catalog/product.php
+CODE: if (isset($this->request->post['selected']) && $this->validateDelete()) {
+LINE: 203
+CODE: if (isset($this->request->post['selected']) && $this->validateCopy()) {
+LINE: 293
+CODE: $data['products'][] = array(
+LINE: 656
+CODE: $data['cancel'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . $url, true);
+LINE: 994
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: <div class="table-responsive">
+LINE: 240
+CODE: <td class="text-right"><a href="{{ product.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: <button type="submit" form="form-product" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+LINE: 10
+
+FILE: admin/controller/catalog/category.php
+CODE: $data['categories'][] = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/category_list.twig
+CODE: <td class="text-right"><a href="{{ category.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: <button type="submit" form="form-category" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+LINE: 10
+
+FILE: admin/controller/catalog/information.php
+CODE: $data['informations'][] = array(
+LINE: 182
+CODE: $data['informations'][] = array(
+LINE: 185
+CODE: $data['cancel'] = $this->url->link('catalog/information', 'user_token=' . $this->session->data['user_token'] . $url, true);
+LINE: 340
+
+FILE: admin/view/template/catalog/information_list.twig
+CODE: <td class="text-right"><a href="{{ information.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: <button type="submit" form="form-information" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+LINE: 10
+
+FILE: admin/controller/catalog/manufacturer.php
+CODE: $data['manufacturers'][] = array(
+LINE: 180
+CODE: $data['manufacturers'][] = array(
+LINE: 183
+CODE: $data['cancel'] = $this->url->link('catalog/manufacturer', 'user_token=' . $this->session->data['user_token'] . $url, true);
+LINE: 332
+
+FILE: admin/view/template/catalog/manufacturer_list.twig
+CODE: <td class="text-right"><a href="{{ manufacturer.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: <button type="submit" form="form-manufacturer" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+LINE: 10
+----------------------------------------------------------------
+MOD: OCappLab Alert In admin
+
+FILE: admin/controller/common/header.php
+CODE: $this->load->model('user/user');
+LINE: 83
+
+FILE: admin/view/template/common/header.twig
+CODE: <ul class="nav navbar-nav navbar-right">
+LINE: 73
+
+FILE: admin/language/en-gb/common/header.php
+CODE: $_['text_logout']        = 'Logout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/language/ru-ru/common/header.php
+CODE: <?php
+LINE: 13
+----------------------------------------------------------------
+MOD: Block with feedback
+
+FILE: admin/controller/setting/setting.php
+CODE: $data['captcha_pages'] = array();
+LINE: 664
+
+FILE: admin/language/en-gb/setting/setting.php
+CODE: $_['heading_title']
+LINE: 8
+
+FILE: admin/language/ru-ru/setting/setting.php
+CODE: $_['heading_title']
+LINE: 8
+
+FILE: catalog/controller/common/header.php
+CODE: $data['menu'] = $this->load->controller('common/menu');
+LINE: 116
+CODE: return $this->load->view('common/header', $data);
+LINE: 159
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: <li><a href="{{ contact }}"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md">{{ telephone }}</span></li>
+LINE: 63
+CODE: <header>
+LINE: 142
+
+FILE: catalog/view/theme/oc-light/template/common/header.twig
+CODE: <li><a href="{{ contact }}"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md">{{ telephone }}</span></li>
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Bnit Zoom
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 57
+
+FILE: catalog/view/theme/oc-light/template/common/footer.twig
+CODE: </body>
+LINE: 57
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: {{ thumb }}"
+LINE: 24
+
+FILE: catalog/view/theme/oc-light/template/product/product.twig
+CODE: {{ thumb }}"
+LINE: 24
+----------------------------------------------------------------
+MOD: d_ajax_search
+CODE: public function index() {
+LINE: 6
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 341
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 357
+
+FILE: admin/model/setting/extension.php
+CODE: $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "extension_path` WHERE `extension_install_id` = '" . (int)$extension_install_id . "' ORDER BY `date_added` ASC");
+LINE: 72
+
+FILE: admin/model/setting/modification.php
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "modification` WHERE `extension_install_id` = '" . (int)$extension_install_id . "'");
+LINE: 11
+
+FILE: admin/controller/marketplace/install.php
+CODE: $this->model_setting_extension->deleteExtensionInstall($extension_install_id);
+LINE: 506
+CODE: $this->model_setting_modification->deleteModificationsByExtensionInstallId($extension_install_id);
+LINE: 514
+
+FILE: admin/controller/common/filemanager.php
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+LINE: 47
+CODE: 'jpg',
+LINE: 241
+CODE: 'image/jpeg',
+LINE: 254
+
+FILE: admin/view/template/common/filemanager.twig
+CODE: <img src="{{ image.thumb }}" alt="{{ image.name }}" title="{{ image.name }}" />
+LINE: 33
+CODE: </header>
+LINE: 99
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/localisation/language.php
+CODE: $language_data = $this->cache->get('language');
+LINE: 9
+
+FILE: system/config/catalog.php
+CODE: 'view/*/before' => array(
+LINE: 58
+CODE: 'controller/*/after'  => array(
+LINE: 63
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $template = new Template($this->registry->get('config')->get('template_engine'));
+LINE: 118
+
+FILE: system/library/template.php
+CODE: public function __construct($adaptor) {
+LINE: 21
+CODE: $this->adaptor = new $class();
+LINE: 28
+CODE: private $data = array();
+LINE: 8
+CODE: public function __construct() {
+LINE: 10
+CODE: \Twig_Autoloader::register();
+LINE: 21
+CODE: $this->twig = new \Twig_Environment($loader, $config);
+LINE: 54
+
+FILE: catalog/controller/event/theme.php
+CODE: $twig = new \Twig_Environment($loader, $config);
+LINE: 26
+----------------------------------------------------------------
+MOD: Extra_email_opencart.3
+
+FILE: catalog/controller/mail/order.php
+CODE: $data['text_footer'] = $language->get('text_footer');
+LINE: 87
+CODE: if ($order_info['payment_address_format']) {
+LINE: 124
+CODE: 'model'    => $order_product['model'],
+LINE: 227
+LINE: 425
+CODE: $data['products'][] = array(
+LINE: 226
+LINE: 429
+CODE: public function alert(&$route, &$args) {
+LINE: 345
+CODE: $mail->send();
+LINE: 305
+
+FILE: catalog/view/theme/default/template/mail/order_add.twig
+CODE: <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;">{{ product.name }}
+LINE: 81
+----------------------------------------------------------------
+MOD: Featured Plus
+
+FILE: admin/controller/extension/module/featured.php
+CODE: if (isset($this->request->post['status']))
+LINE: 165
+
+FILE: admin/view/template/extension/module/featured.twig
+CODE: <div class="form-group">
+LINE: 66
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: $products =
+LINE: 30
+
+FILE: admin/language/en-gb/extension/module/featured.php
+CODE: <?php
+LINE: 6
+
+FILE: admin/language/ru-ru/extension/module/featured.php
+CODE: <?php
+LINE: 6
+----------------------------------------------------------------
+MOD: Fix Filter Opencart 3.x
+
+FILE: catalog/model/catalog/product.php
+CODE: $sql .= " AND pf.filter_id IN (" . implode(',', $implode) . ")";
+LINE: 134
+LINE: 525
+CODE: $sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
+LINE: 201
+LINE: 602
+----------------------------------------------------------------
+MOD: Madeshop Modification
+
+FILE: catalog/controller/product/category.php
+CODE: $data['products'][] = array(
+LINE: 220
+
+FILE: catalog/controller/product/manufacturer.php
+CODE: $data['products'][] = array(
+LINE: 217
+
+FILE: catalog/controller/product/search.php
+CODE: $data['products'][] = array(
+LINE: 230
+
+FILE: catalog/controller/product/special.php
+CODE: $data['products'][] = array(
+LINE: 120
+
+FILE: catalog/controller/extension/module/latest.php
+CODE: $data['products'][] = array(
+LINE: 52
+
+FILE: catalog/controller/extension/module/bestseller.php
+CODE: $data['products'][] = array(
+LINE: 45
+
+FILE: catalog/controller/extension/module/special.php
+CODE: $data['products'][] = array(
+LINE: 52
+
+FILE: catalog/controller/product/product.php
+CODE: $data['products'][] = array(
+LINE: 426
+CODE: $data['products'][] = array(
+LINE: 66
+
+FILE: catalog/view/theme/default/template/product/category.twig
+CODE: <div class="image">
+LINE: 130
+
+FILE: catalog/view/theme/oc-light/template/product/category.twig
+CODE: <div class="image">
+LINE: 130
+CODE: <div class="image">
+LINE: 311
+CODE: <div class="image">
+LINE: 372
+
+FILE: catalog/view/theme/default/template/product/search.twig
+CODE: <div class="image">
+LINE: 115
+
+FILE: catalog/view/theme/oc-light/template/product/search.twig
+CODE: <div class="image">
+LINE: 115
+
+FILE: catalog/view/theme/default/template/product/special.twig
+CODE: <div class="image">
+LINE: 72
+
+FILE: catalog/view/theme/default/template/extension/module/latest.twig
+CODE: <div class="image">
+LINE: 4
+
+FILE: catalog/view/theme/oc-light/template/extension/module/latest.twig
+CODE: <div class="image">
+LINE: 6
+
+FILE: catalog/view/theme/default/template/extension/module/bestseller.twig
+CODE: <div class="image">
+LINE: 5
+
+FILE: catalog/view/theme/oc-light/template/extension/module/bestseller.twig
+CODE: <div class="image">
+LINE: 7
+
+FILE: catalog/view/theme/default/template/extension/module/special.twig
+CODE: <div class="image">
+LINE: 4
+
+FILE: catalog/view/theme/default/template/extension/module/featured.twig
+CODE: <div class="image">
+LINE: 5
+
+FILE: catalog/view/theme/oc-light/template/extension/module/featured.twig
+CODE: <div class="image">
+LINE: 7
+CODE: {% for script in scripts %}
+LINE: 41
+CODE: {% for script in scripts %}
+LINE: 30
+----------------------------------------------------------------
+MOD: Пароль в письме о регистрации
+
+FILE: catalog/controller/mail/register.php
+CODE: $data['login'] = $this->url->link('account/login', '', true);
+LINE: 31
+
+FILE: catalog/view/theme/default/template/mail/register.twig
+CODE: {{ login }}
+LINE: 11
+LINE: 26
+
+FILE: catalog/language/ru-ru/mail/register.php
+CODE: <?php
+LINE: 4
+
+FILE: catalog/language/en-gb/mail/register.php
+CODE: <?php
+LINE: 4
+----------------------------------------------------------------
+MOD: Перетаскивание модулей в макетах
+
+FILE: admin/controller/design/layout.php
+CODE: protected function getForm() {
+LINE: 251
+
+FILE: admin/view/template/design/layout_form.twig
+CODE: {{ footer }}
+LINE: 445
+----------------------------------------------------------------
+MOD: Українська мова / Украинский язык
+----------------------------------------------------------------
+MOD: Форма авторизации в шапке
+CODE: </head>
+LINE: 60
+CODE: {{ language }}
+LINE: 81
+CODE: </head>
+LINE: 50
+CODE: {{ language }}
+LINE: 71
+----------------------------------------------------------------
+2019-11-04 14:00:29 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: View from admin page
+
+FILE: admin/controller/catalog/product.php
+CODE: if (isset($this->request->post['selected']) && $this->validateDelete()) {
+LINE: 203
+CODE: if (isset($this->request->post['selected']) && $this->validateCopy()) {
+LINE: 293
+CODE: $data['products'][] = array(
+LINE: 656
+CODE: $data['cancel'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . $url, true);
+LINE: 994
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: <div class="table-responsive">
+LINE: 240
+CODE: <td class="text-right"><a href="{{ product.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: <button type="submit" form="form-product" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+LINE: 10
+
+FILE: admin/controller/catalog/category.php
+CODE: $data['categories'][] = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/category_list.twig
+CODE: <td class="text-right"><a href="{{ category.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: <button type="submit" form="form-category" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+LINE: 10
+
+FILE: admin/controller/catalog/information.php
+CODE: $data['informations'][] = array(
+LINE: 182
+CODE: $data['informations'][] = array(
+LINE: 185
+CODE: $data['cancel'] = $this->url->link('catalog/information', 'user_token=' . $this->session->data['user_token'] . $url, true);
+LINE: 340
+
+FILE: admin/view/template/catalog/information_list.twig
+CODE: <td class="text-right"><a href="{{ information.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: <button type="submit" form="form-information" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+LINE: 10
+
+FILE: admin/controller/catalog/manufacturer.php
+CODE: $data['manufacturers'][] = array(
+LINE: 180
+CODE: $data['manufacturers'][] = array(
+LINE: 183
+CODE: $data['cancel'] = $this->url->link('catalog/manufacturer', 'user_token=' . $this->session->data['user_token'] . $url, true);
+LINE: 332
+
+FILE: admin/view/template/catalog/manufacturer_list.twig
+CODE: <td class="text-right"><a href="{{ manufacturer.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: <button type="submit" form="form-manufacturer" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+LINE: 10
+----------------------------------------------------------------
+MOD: OCappLab Alert In admin
+
+FILE: admin/controller/common/header.php
+CODE: $this->load->model('user/user');
+LINE: 83
+
+FILE: admin/view/template/common/header.twig
+CODE: <ul class="nav navbar-nav navbar-right">
+LINE: 73
+
+FILE: admin/language/en-gb/common/header.php
+CODE: $_['text_logout']        = 'Logout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/language/ru-ru/common/header.php
+CODE: <?php
+LINE: 13
+----------------------------------------------------------------
+MOD: Block with feedback
+
+FILE: admin/controller/setting/setting.php
+CODE: $data['captcha_pages'] = array();
+LINE: 664
+
+FILE: admin/language/en-gb/setting/setting.php
+CODE: $_['heading_title']
+LINE: 8
+
+FILE: admin/language/ru-ru/setting/setting.php
+CODE: $_['heading_title']
+LINE: 8
+
+FILE: catalog/controller/common/header.php
+CODE: $data['menu'] = $this->load->controller('common/menu');
+LINE: 116
+CODE: return $this->load->view('common/header', $data);
+LINE: 159
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: <li><a href="{{ contact }}"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md">{{ telephone }}</span></li>
+LINE: 63
+CODE: <header>
+LINE: 142
+
+FILE: catalog/view/theme/oc-light/template/common/header.twig
+CODE: <li><a href="{{ contact }}"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md">{{ telephone }}</span></li>
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Bnit Zoom
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 57
+
+FILE: catalog/view/theme/oc-light/template/common/footer.twig
+CODE: </body>
+LINE: 57
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: {{ thumb }}"
+LINE: 24
+
+FILE: catalog/view/theme/oc-light/template/product/product.twig
+CODE: {{ thumb }}"
+LINE: 24
+----------------------------------------------------------------
+MOD: d_ajax_search
+CODE: public function index() {
+LINE: 6
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 341
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 357
+
+FILE: admin/model/setting/extension.php
+CODE: $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "extension_path` WHERE `extension_install_id` = '" . (int)$extension_install_id . "' ORDER BY `date_added` ASC");
+LINE: 72
+
+FILE: admin/model/setting/modification.php
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "modification` WHERE `extension_install_id` = '" . (int)$extension_install_id . "'");
+LINE: 11
+
+FILE: admin/controller/marketplace/install.php
+CODE: $this->model_setting_extension->deleteExtensionInstall($extension_install_id);
+LINE: 506
+CODE: $this->model_setting_modification->deleteModificationsByExtensionInstallId($extension_install_id);
+LINE: 514
+
+FILE: admin/controller/common/filemanager.php
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+LINE: 47
+CODE: 'jpg',
+LINE: 241
+CODE: 'image/jpeg',
+LINE: 254
+
+FILE: admin/view/template/common/filemanager.twig
+CODE: <img src="{{ image.thumb }}" alt="{{ image.name }}" title="{{ image.name }}" />
+LINE: 33
+CODE: </header>
+LINE: 99
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/localisation/language.php
+CODE: $language_data = $this->cache->get('language');
+LINE: 9
+
+FILE: system/config/catalog.php
+CODE: 'view/*/before' => array(
+LINE: 58
+CODE: 'controller/*/after'  => array(
+LINE: 63
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $template = new Template($this->registry->get('config')->get('template_engine'));
+LINE: 118
+
+FILE: system/library/template.php
+CODE: public function __construct($adaptor) {
+LINE: 21
+CODE: $this->adaptor = new $class();
+LINE: 28
+CODE: private $data = array();
+LINE: 8
+CODE: public function __construct() {
+LINE: 10
+CODE: \Twig_Autoloader::register();
+LINE: 21
+CODE: $this->twig = new \Twig_Environment($loader, $config);
+LINE: 54
+
+FILE: catalog/controller/event/theme.php
+CODE: $twig = new \Twig_Environment($loader, $config);
+LINE: 26
+----------------------------------------------------------------
+MOD: Extra_email_opencart.3
+
+FILE: catalog/controller/mail/order.php
+CODE: $data['text_footer'] = $language->get('text_footer');
+LINE: 87
+CODE: if ($order_info['payment_address_format']) {
+LINE: 124
+CODE: 'model'    => $order_product['model'],
+LINE: 227
+LINE: 425
+CODE: $data['products'][] = array(
+LINE: 226
+LINE: 429
+CODE: public function alert(&$route, &$args) {
+LINE: 345
+CODE: $mail->send();
+LINE: 305
+
+FILE: catalog/view/theme/default/template/mail/order_add.twig
+CODE: <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;">{{ product.name }}
+LINE: 81
+----------------------------------------------------------------
+MOD: Featured Plus
+
+FILE: admin/controller/extension/module/featured.php
+CODE: if (isset($this->request->post['status']))
+LINE: 165
+
+FILE: admin/view/template/extension/module/featured.twig
+CODE: <div class="form-group">
+LINE: 66
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: $products =
+LINE: 30
+
+FILE: admin/language/en-gb/extension/module/featured.php
+CODE: <?php
+LINE: 6
+
+FILE: admin/language/ru-ru/extension/module/featured.php
+CODE: <?php
+LINE: 6
+----------------------------------------------------------------
+MOD: Fix Filter Opencart 3.x
+
+FILE: catalog/model/catalog/product.php
+CODE: $sql .= " AND pf.filter_id IN (" . implode(',', $implode) . ")";
+LINE: 134
+LINE: 525
+CODE: $sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
+LINE: 201
+LINE: 602
+----------------------------------------------------------------
+MOD: Madeshop Modification
+
+FILE: catalog/controller/product/category.php
+CODE: $data['products'][] = array(
+LINE: 220
+
+FILE: catalog/controller/product/manufacturer.php
+CODE: $data['products'][] = array(
+LINE: 217
+
+FILE: catalog/controller/product/search.php
+CODE: $data['products'][] = array(
+LINE: 230
+
+FILE: catalog/controller/product/special.php
+CODE: $data['products'][] = array(
+LINE: 120
+
+FILE: catalog/controller/extension/module/latest.php
+CODE: $data['products'][] = array(
+LINE: 52
+
+FILE: catalog/controller/extension/module/bestseller.php
+CODE: $data['products'][] = array(
+LINE: 45
+
+FILE: catalog/controller/extension/module/special.php
+CODE: $data['products'][] = array(
+LINE: 52
+
+FILE: catalog/controller/product/product.php
+CODE: $data['products'][] = array(
+LINE: 426
+CODE: $data['products'][] = array(
+LINE: 66
+
+FILE: catalog/view/theme/default/template/product/category.twig
+CODE: <div class="image">
+LINE: 130
+
+FILE: catalog/view/theme/oc-light/template/product/category.twig
+CODE: <div class="image">
+LINE: 130
+CODE: <div class="image">
+LINE: 311
+CODE: <div class="image">
+LINE: 372
+
+FILE: catalog/view/theme/default/template/product/search.twig
+CODE: <div class="image">
+LINE: 115
+
+FILE: catalog/view/theme/oc-light/template/product/search.twig
+CODE: <div class="image">
+LINE: 115
+
+FILE: catalog/view/theme/default/template/product/special.twig
+CODE: <div class="image">
+LINE: 72
+
+FILE: catalog/view/theme/default/template/extension/module/latest.twig
+CODE: <div class="image">
+LINE: 4
+
+FILE: catalog/view/theme/oc-light/template/extension/module/latest.twig
+CODE: <div class="image">
+LINE: 6
+
+FILE: catalog/view/theme/default/template/extension/module/bestseller.twig
+CODE: <div class="image">
+LINE: 5
+
+FILE: catalog/view/theme/oc-light/template/extension/module/bestseller.twig
+CODE: <div class="image">
+LINE: 7
+
+FILE: catalog/view/theme/default/template/extension/module/special.twig
+CODE: <div class="image">
+LINE: 4
+
+FILE: catalog/view/theme/default/template/extension/module/featured.twig
+CODE: <div class="image">
+LINE: 5
+
+FILE: catalog/view/theme/oc-light/template/extension/module/featured.twig
+CODE: <div class="image">
+LINE: 7
+CODE: {% for script in scripts %}
+LINE: 41
+CODE: {% for script in scripts %}
+LINE: 30
+----------------------------------------------------------------
+MOD: Доп фото слайдером в карточке товара
+CODE: $this->load->language('product/product');
+LINE: 12
+LINE: 557
+LINE: 600
+LINE: 644
+CODE: {% if images %}
+LINE: 29
+CODE: {% for image in images %}
+LINE: 33
+CODE: <li class="image-additional"><a class="thumbnail" href="{{ image.popup }}" title="{{ heading_title }}"> <img src="{{ image.thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a></li>
+LINE: 37
+CODE: {{ footer }}
+LINE: 585
+CODE: {% if images %}
+LINE: 29
+CODE: {% for image in images %}
+LINE: 33
+CODE: <li class="image-additional"><a class="thumbnail" href="{{ image.popup }}" title="{{ heading_title }}"> <img src="{{ image.thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a></li>
+LINE: 37
+CODE: {{ footer }}
+LINE: 643
+----------------------------------------------------------------
+MOD: Пароль в письме о регистрации
+
+FILE: catalog/controller/mail/register.php
+CODE: $data['login'] = $this->url->link('account/login', '', true);
+LINE: 31
+
+FILE: catalog/view/theme/default/template/mail/register.twig
+CODE: {{ login }}
+LINE: 11
+LINE: 26
+
+FILE: catalog/language/ru-ru/mail/register.php
+CODE: <?php
+LINE: 4
+
+FILE: catalog/language/en-gb/mail/register.php
+CODE: <?php
+LINE: 4
+----------------------------------------------------------------
+MOD: Перетаскивание модулей в макетах
+
+FILE: admin/controller/design/layout.php
+CODE: protected function getForm() {
+LINE: 251
+
+FILE: admin/view/template/design/layout_form.twig
+CODE: {{ footer }}
+LINE: 445
+----------------------------------------------------------------
+MOD: Українська мова / Украинский язык
+----------------------------------------------------------------
+MOD: Форма авторизации в шапке
+CODE: </head>
+LINE: 60
+CODE: {{ language }}
+LINE: 81
+CODE: </head>
+LINE: 50
+CODE: {{ language }}
+LINE: 71
+----------------------------------------------------------------
+2019-11-04 14:11:55 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: View from admin page
+
+FILE: admin/controller/catalog/product.php
+CODE: if (isset($this->request->post['selected']) && $this->validateDelete()) {
+LINE: 203
+CODE: if (isset($this->request->post['selected']) && $this->validateCopy()) {
+LINE: 293
+CODE: $data['products'][] = array(
+LINE: 656
+CODE: $data['cancel'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . $url, true);
+LINE: 994
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: <div class="table-responsive">
+LINE: 240
+CODE: <td class="text-right"><a href="{{ product.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: <button type="submit" form="form-product" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+LINE: 10
+
+FILE: admin/controller/catalog/category.php
+CODE: $data['categories'][] = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/category_list.twig
+CODE: <td class="text-right"><a href="{{ category.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: <button type="submit" form="form-category" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+LINE: 10
+
+FILE: admin/controller/catalog/information.php
+CODE: $data['informations'][] = array(
+LINE: 182
+CODE: $data['informations'][] = array(
+LINE: 185
+CODE: $data['cancel'] = $this->url->link('catalog/information', 'user_token=' . $this->session->data['user_token'] . $url, true);
+LINE: 340
+
+FILE: admin/view/template/catalog/information_list.twig
+CODE: <td class="text-right"><a href="{{ information.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: <button type="submit" form="form-information" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+LINE: 10
+
+FILE: admin/controller/catalog/manufacturer.php
+CODE: $data['manufacturers'][] = array(
+LINE: 180
+CODE: $data['manufacturers'][] = array(
+LINE: 183
+CODE: $data['cancel'] = $this->url->link('catalog/manufacturer', 'user_token=' . $this->session->data['user_token'] . $url, true);
+LINE: 332
+
+FILE: admin/view/template/catalog/manufacturer_list.twig
+CODE: <td class="text-right"><a href="{{ manufacturer.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: <button type="submit" form="form-manufacturer" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+LINE: 10
+----------------------------------------------------------------
+MOD: OCappLab Alert In admin
+
+FILE: admin/controller/common/header.php
+CODE: $this->load->model('user/user');
+LINE: 83
+
+FILE: admin/view/template/common/header.twig
+CODE: <ul class="nav navbar-nav navbar-right">
+LINE: 73
+
+FILE: admin/language/en-gb/common/header.php
+CODE: $_['text_logout']        = 'Logout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/language/ru-ru/common/header.php
+CODE: <?php
+LINE: 13
+----------------------------------------------------------------
+MOD: <i class="fa fa-file-text-o" aria-hidden="true"></i> Cookie Policy
+
+FILE: catalog/controller/common/footer.php
+CODE: $this->load->language('common/footer');
+LINE: 62
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 104
+
+FILE: catalog/view/theme/oc-light/template/common/footer.twig
+CODE: </body>
+LINE: 104
+----------------------------------------------------------------
+MOD: Block with feedback
+
+FILE: admin/controller/setting/setting.php
+CODE: $data['captcha_pages'] = array();
+LINE: 664
+
+FILE: admin/language/en-gb/setting/setting.php
+CODE: $_['heading_title']
+LINE: 8
+
+FILE: admin/language/ru-ru/setting/setting.php
+CODE: $_['heading_title']
+LINE: 8
+
+FILE: catalog/controller/common/header.php
+CODE: $data['menu'] = $this->load->controller('common/menu');
+LINE: 116
+CODE: return $this->load->view('common/header', $data);
+LINE: 159
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: <li><a href="{{ contact }}"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md">{{ telephone }}</span></li>
+LINE: 63
+CODE: <header>
+LINE: 142
+
+FILE: catalog/view/theme/oc-light/template/common/header.twig
+CODE: <li><a href="{{ contact }}"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md">{{ telephone }}</span></li>
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Bnit Zoom
+CODE: </body>
+LINE: 110
+CODE: </body>
+LINE: 110
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: {{ thumb }}"
+LINE: 24
+
+FILE: catalog/view/theme/oc-light/template/product/product.twig
+CODE: {{ thumb }}"
+LINE: 24
+----------------------------------------------------------------
+MOD: d_ajax_search
+CODE: public function index() {
+LINE: 6
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 341
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 357
+
+FILE: admin/model/setting/extension.php
+CODE: $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "extension_path` WHERE `extension_install_id` = '" . (int)$extension_install_id . "' ORDER BY `date_added` ASC");
+LINE: 72
+
+FILE: admin/model/setting/modification.php
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "modification` WHERE `extension_install_id` = '" . (int)$extension_install_id . "'");
+LINE: 11
+
+FILE: admin/controller/marketplace/install.php
+CODE: $this->model_setting_extension->deleteExtensionInstall($extension_install_id);
+LINE: 506
+CODE: $this->model_setting_modification->deleteModificationsByExtensionInstallId($extension_install_id);
+LINE: 514
+
+FILE: admin/controller/common/filemanager.php
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+LINE: 47
+CODE: 'jpg',
+LINE: 241
+CODE: 'image/jpeg',
+LINE: 254
+
+FILE: admin/view/template/common/filemanager.twig
+CODE: <img src="{{ image.thumb }}" alt="{{ image.name }}" title="{{ image.name }}" />
+LINE: 33
+CODE: </header>
+LINE: 99
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/localisation/language.php
+CODE: $language_data = $this->cache->get('language');
+LINE: 9
+
+FILE: system/config/catalog.php
+CODE: 'view/*/before' => array(
+LINE: 58
+CODE: 'controller/*/after'  => array(
+LINE: 63
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $template = new Template($this->registry->get('config')->get('template_engine'));
+LINE: 118
+
+FILE: system/library/template.php
+CODE: public function __construct($adaptor) {
+LINE: 21
+CODE: $this->adaptor = new $class();
+LINE: 28
+CODE: private $data = array();
+LINE: 8
+CODE: public function __construct() {
+LINE: 10
+CODE: \Twig_Autoloader::register();
+LINE: 21
+CODE: $this->twig = new \Twig_Environment($loader, $config);
+LINE: 54
+
+FILE: catalog/controller/event/theme.php
+CODE: $twig = new \Twig_Environment($loader, $config);
+LINE: 26
+----------------------------------------------------------------
+MOD: Extra_email_opencart.3
+
+FILE: catalog/controller/mail/order.php
+CODE: $data['text_footer'] = $language->get('text_footer');
+LINE: 87
+CODE: if ($order_info['payment_address_format']) {
+LINE: 124
+CODE: 'model'    => $order_product['model'],
+LINE: 227
+LINE: 425
+CODE: $data['products'][] = array(
+LINE: 226
+LINE: 429
+CODE: public function alert(&$route, &$args) {
+LINE: 345
+CODE: $mail->send();
+LINE: 305
+
+FILE: catalog/view/theme/default/template/mail/order_add.twig
+CODE: <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;">{{ product.name }}
+LINE: 81
+----------------------------------------------------------------
+MOD: Featured Plus
+
+FILE: admin/controller/extension/module/featured.php
+CODE: if (isset($this->request->post['status']))
+LINE: 165
+
+FILE: admin/view/template/extension/module/featured.twig
+CODE: <div class="form-group">
+LINE: 66
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: $products =
+LINE: 30
+
+FILE: admin/language/en-gb/extension/module/featured.php
+CODE: <?php
+LINE: 6
+
+FILE: admin/language/ru-ru/extension/module/featured.php
+CODE: <?php
+LINE: 6
+----------------------------------------------------------------
+MOD: Fix Filter Opencart 3.x
+
+FILE: catalog/model/catalog/product.php
+CODE: $sql .= " AND pf.filter_id IN (" . implode(',', $implode) . ")";
+LINE: 134
+LINE: 525
+CODE: $sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
+LINE: 201
+LINE: 602
+----------------------------------------------------------------
+MOD: Madeshop Modification
+
+FILE: catalog/controller/product/category.php
+CODE: $data['products'][] = array(
+LINE: 220
+
+FILE: catalog/controller/product/manufacturer.php
+CODE: $data['products'][] = array(
+LINE: 217
+
+FILE: catalog/controller/product/search.php
+CODE: $data['products'][] = array(
+LINE: 230
+
+FILE: catalog/controller/product/special.php
+CODE: $data['products'][] = array(
+LINE: 120
+
+FILE: catalog/controller/extension/module/latest.php
+CODE: $data['products'][] = array(
+LINE: 52
+
+FILE: catalog/controller/extension/module/bestseller.php
+CODE: $data['products'][] = array(
+LINE: 45
+
+FILE: catalog/controller/extension/module/special.php
+CODE: $data['products'][] = array(
+LINE: 52
+
+FILE: catalog/controller/product/product.php
+CODE: $data['products'][] = array(
+LINE: 426
+CODE: $data['products'][] = array(
+LINE: 66
+
+FILE: catalog/view/theme/default/template/product/category.twig
+CODE: <div class="image">
+LINE: 130
+
+FILE: catalog/view/theme/oc-light/template/product/category.twig
+CODE: <div class="image">
+LINE: 130
+CODE: <div class="image">
+LINE: 311
+CODE: <div class="image">
+LINE: 372
+
+FILE: catalog/view/theme/default/template/product/search.twig
+CODE: <div class="image">
+LINE: 115
+
+FILE: catalog/view/theme/oc-light/template/product/search.twig
+CODE: <div class="image">
+LINE: 115
+
+FILE: catalog/view/theme/default/template/product/special.twig
+CODE: <div class="image">
+LINE: 72
+
+FILE: catalog/view/theme/default/template/extension/module/latest.twig
+CODE: <div class="image">
+LINE: 4
+
+FILE: catalog/view/theme/oc-light/template/extension/module/latest.twig
+CODE: <div class="image">
+LINE: 6
+
+FILE: catalog/view/theme/default/template/extension/module/bestseller.twig
+CODE: <div class="image">
+LINE: 5
+
+FILE: catalog/view/theme/oc-light/template/extension/module/bestseller.twig
+CODE: <div class="image">
+LINE: 7
+
+FILE: catalog/view/theme/default/template/extension/module/special.twig
+CODE: <div class="image">
+LINE: 4
+
+FILE: catalog/view/theme/default/template/extension/module/featured.twig
+CODE: <div class="image">
+LINE: 5
+
+FILE: catalog/view/theme/oc-light/template/extension/module/featured.twig
+CODE: <div class="image">
+LINE: 7
+CODE: {% for script in scripts %}
+LINE: 41
+CODE: {% for script in scripts %}
+LINE: 30
+----------------------------------------------------------------
+MOD: Доп фото слайдером в карточке товара
+CODE: $this->load->language('product/product');
+LINE: 12
+LINE: 557
+LINE: 600
+LINE: 644
+CODE: {% if images %}
+LINE: 29
+CODE: {% for image in images %}
+LINE: 33
+CODE: <li class="image-additional"><a class="thumbnail" href="{{ image.popup }}" title="{{ heading_title }}"> <img src="{{ image.thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a></li>
+LINE: 37
+CODE: {{ footer }}
+LINE: 585
+CODE: {% if images %}
+LINE: 29
+CODE: {% for image in images %}
+LINE: 33
+CODE: <li class="image-additional"><a class="thumbnail" href="{{ image.popup }}" title="{{ heading_title }}"> <img src="{{ image.thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a></li>
+LINE: 37
+CODE: {{ footer }}
+LINE: 643
+----------------------------------------------------------------
+MOD: Пароль в письме о регистрации
+
+FILE: catalog/controller/mail/register.php
+CODE: $data['login'] = $this->url->link('account/login', '', true);
+LINE: 31
+
+FILE: catalog/view/theme/default/template/mail/register.twig
+CODE: {{ login }}
+LINE: 11
+LINE: 26
+
+FILE: catalog/language/ru-ru/mail/register.php
+CODE: <?php
+LINE: 4
+
+FILE: catalog/language/en-gb/mail/register.php
+CODE: <?php
+LINE: 4
+----------------------------------------------------------------
+MOD: Перетаскивание модулей в макетах
+
+FILE: admin/controller/design/layout.php
+CODE: protected function getForm() {
+LINE: 251
+
+FILE: admin/view/template/design/layout_form.twig
+CODE: {{ footer }}
+LINE: 445
+----------------------------------------------------------------
+MOD: Українська мова / Украинский язык
+----------------------------------------------------------------
+MOD: Форма авторизации в шапке
+CODE: </head>
+LINE: 60
+CODE: {{ language }}
+LINE: 81
+CODE: </head>
+LINE: 50
+CODE: {{ language }}
+LINE: 71
+----------------------------------------------------------------
+2019-11-04 16:53:43 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: View from admin page
+
+FILE: admin/controller/catalog/product.php
+CODE: if (isset($this->request->post['selected']) && $this->validateDelete()) {
+LINE: 203
+CODE: if (isset($this->request->post['selected']) && $this->validateCopy()) {
+LINE: 293
+CODE: $data['products'][] = array(
+LINE: 656
+CODE: $data['cancel'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . $url, true);
+LINE: 994
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: <div class="table-responsive">
+LINE: 240
+CODE: <td class="text-right"><a href="{{ product.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: <button type="submit" form="form-product" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+LINE: 10
+
+FILE: admin/controller/catalog/category.php
+CODE: $data['categories'][] = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/category_list.twig
+CODE: <td class="text-right"><a href="{{ category.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: <button type="submit" form="form-category" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+LINE: 10
+
+FILE: admin/controller/catalog/information.php
+CODE: $data['informations'][] = array(
+LINE: 182
+CODE: $data['informations'][] = array(
+LINE: 185
+CODE: $data['cancel'] = $this->url->link('catalog/information', 'user_token=' . $this->session->data['user_token'] . $url, true);
+LINE: 340
+
+FILE: admin/view/template/catalog/information_list.twig
+CODE: <td class="text-right"><a href="{{ information.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: <button type="submit" form="form-information" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+LINE: 10
+
+FILE: admin/controller/catalog/manufacturer.php
+CODE: $data['manufacturers'][] = array(
+LINE: 180
+CODE: $data['manufacturers'][] = array(
+LINE: 183
+CODE: $data['cancel'] = $this->url->link('catalog/manufacturer', 'user_token=' . $this->session->data['user_token'] . $url, true);
+LINE: 332
+
+FILE: admin/view/template/catalog/manufacturer_list.twig
+CODE: <td class="text-right"><a href="{{ manufacturer.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/manufacturer_form.twig
+CODE: <button type="submit" form="form-manufacturer" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+LINE: 10
+----------------------------------------------------------------
+MOD: OCappLab Alert In admin
+
+FILE: admin/controller/common/header.php
+CODE: $this->load->model('user/user');
+LINE: 83
+
+FILE: admin/view/template/common/header.twig
+CODE: <ul class="nav navbar-nav navbar-right">
+LINE: 73
+
+FILE: admin/language/en-gb/common/header.php
+CODE: $_['text_logout']        = 'Logout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/language/ru-ru/common/header.php
+CODE: <?php
+LINE: 13
+----------------------------------------------------------------
+MOD: <i class="fa fa-file-text-o" aria-hidden="true"></i> Cookie Policy
+
+FILE: catalog/controller/common/footer.php
+CODE: $this->load->language('common/footer');
+LINE: 62
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 104
+
+FILE: catalog/view/theme/oc-light/template/common/footer.twig
+CODE: </body>
+LINE: 104
+----------------------------------------------------------------
+MOD: Block with feedback
+
+FILE: admin/controller/setting/setting.php
+CODE: $data['captcha_pages'] = array();
+LINE: 664
+
+FILE: admin/language/en-gb/setting/setting.php
+CODE: $_['heading_title']
+LINE: 8
+
+FILE: admin/language/ru-ru/setting/setting.php
+CODE: $_['heading_title']
+LINE: 8
+
+FILE: catalog/controller/common/header.php
+CODE: $data['menu'] = $this->load->controller('common/menu');
+LINE: 116
+CODE: return $this->load->view('common/header', $data);
+LINE: 159
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: <li><a href="{{ contact }}"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md">{{ telephone }}</span></li>
+LINE: 63
+CODE: <header>
+LINE: 142
+
+FILE: catalog/view/theme/oc-light/template/common/header.twig
+CODE: <li><a href="{{ contact }}"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md">{{ telephone }}</span></li>
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Bnit Zoom
+CODE: </body>
+LINE: 110
+CODE: </body>
+LINE: 110
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: {{ thumb }}"
+LINE: 24
+
+FILE: catalog/view/theme/oc-light/template/product/product.twig
+CODE: {{ thumb }}"
+LINE: 24
+----------------------------------------------------------------
+MOD: d_ajax_search
+CODE: public function index() {
+LINE: 6
+----------------------------------------------------------------
+MOD: d_opencart_patch
+
+FILE: admin/controller/user/user_permission.php
+CODE: $path[] = $file . '/*';
+LINE: 341
+CODE: $permission = substr($controller, 0, strrpos($controller, '.'));
+LINE: 357
+
+FILE: admin/model/setting/extension.php
+CODE: $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "extension_path` WHERE `extension_install_id` = '" . (int)$extension_install_id . "' ORDER BY `date_added` ASC");
+LINE: 72
+
+FILE: admin/model/setting/modification.php
+CODE: $this->db->query("DELETE FROM `" . DB_PREFIX . "modification` WHERE `extension_install_id` = '" . (int)$extension_install_id . "'");
+LINE: 11
+
+FILE: admin/controller/marketplace/install.php
+CODE: $this->model_setting_extension->deleteExtensionInstall($extension_install_id);
+LINE: 506
+CODE: $this->model_setting_modification->deleteModificationsByExtensionInstallId($extension_install_id);
+LINE: 514
+
+FILE: admin/controller/common/filemanager.php
+CODE: $files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+LINE: 47
+CODE: 'jpg',
+LINE: 241
+CODE: 'image/jpeg',
+LINE: 254
+
+FILE: admin/view/template/common/filemanager.twig
+CODE: <img src="{{ image.thumb }}" alt="{{ image.name }}" title="{{ image.name }}" />
+LINE: 33
+CODE: </header>
+LINE: 99
+
+FILE: admin/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/tool/image.php
+CODE: public function resize($filename, $width, $height) {
+LINE: 18
+
+FILE: catalog/model/localisation/language.php
+CODE: $language_data = $this->cache->get('language');
+LINE: 9
+
+FILE: system/config/catalog.php
+CODE: 'view/*/before' => array(
+LINE: 58
+CODE: 'controller/*/after'  => array(
+LINE: 63
+----------------------------------------------------------------
+MOD: d_twig_manager
+CODE: $template = new Template($this->registry->get('config')->get('template_engine'));
+LINE: 118
+
+FILE: system/library/template.php
+CODE: public function __construct($adaptor) {
+LINE: 21
+CODE: $this->adaptor = new $class();
+LINE: 28
+CODE: private $data = array();
+LINE: 8
+CODE: public function __construct() {
+LINE: 10
+CODE: \Twig_Autoloader::register();
+LINE: 21
+CODE: $this->twig = new \Twig_Environment($loader, $config);
+LINE: 54
+
+FILE: catalog/controller/event/theme.php
+CODE: $twig = new \Twig_Environment($loader, $config);
+LINE: 26
+----------------------------------------------------------------
+MOD: Extra_email_opencart.3
+
+FILE: catalog/controller/mail/order.php
+CODE: $data['text_footer'] = $language->get('text_footer');
+LINE: 87
+CODE: if ($order_info['payment_address_format']) {
+LINE: 124
+CODE: 'model'    => $order_product['model'],
+LINE: 227
+LINE: 425
+CODE: $data['products'][] = array(
+LINE: 226
+LINE: 429
+CODE: public function alert(&$route, &$args) {
+LINE: 345
+CODE: $mail->send();
+LINE: 305
+
+FILE: catalog/view/theme/default/template/mail/order_add.twig
+CODE: <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;">{{ product.name }}
+LINE: 81
+----------------------------------------------------------------
+MOD: Featured Plus
+
+FILE: admin/controller/extension/module/featured.php
+CODE: if (isset($this->request->post['status']))
+LINE: 165
+
+FILE: admin/view/template/extension/module/featured.twig
+CODE: <div class="form-group">
+LINE: 66
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: $products =
+LINE: 30
+
+FILE: admin/language/en-gb/extension/module/featured.php
+CODE: <?php
+LINE: 6
+
+FILE: admin/language/ru-ru/extension/module/featured.php
+CODE: <?php
+LINE: 6
+----------------------------------------------------------------
+MOD: Fix Filter Opencart 3.x
+
+FILE: catalog/model/catalog/product.php
+CODE: $sql .= " AND pf.filter_id IN (" . implode(',', $implode) . ")";
+LINE: 134
+LINE: 525
+CODE: $sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
+LINE: 201
+LINE: 602
+----------------------------------------------------------------
+MOD: Madeshop Modification
+
+FILE: catalog/controller/product/category.php
+CODE: $data['products'][] = array(
+LINE: 220
+
+FILE: catalog/controller/product/manufacturer.php
+CODE: $data['products'][] = array(
+LINE: 217
+
+FILE: catalog/controller/product/search.php
+CODE: $data['products'][] = array(
+LINE: 230
+
+FILE: catalog/controller/product/special.php
+CODE: $data['products'][] = array(
+LINE: 120
+
+FILE: catalog/controller/extension/module/latest.php
+CODE: $data['products'][] = array(
+LINE: 52
+
+FILE: catalog/controller/extension/module/bestseller.php
+CODE: $data['products'][] = array(
+LINE: 45
+
+FILE: catalog/controller/extension/module/special.php
+CODE: $data['products'][] = array(
+LINE: 52
+
+FILE: catalog/controller/product/product.php
+CODE: $data['products'][] = array(
+LINE: 426
+CODE: $data['products'][] = array(
+LINE: 66
+
+FILE: catalog/view/theme/default/template/product/category.twig
+CODE: <div class="image">
+LINE: 130
+
+FILE: catalog/view/theme/oc-light/template/product/category.twig
+CODE: <div class="image">
+LINE: 130
+CODE: <div class="image">
+LINE: 311
+CODE: <div class="image">
+LINE: 372
+
+FILE: catalog/view/theme/default/template/product/search.twig
+CODE: <div class="image">
+LINE: 115
+
+FILE: catalog/view/theme/oc-light/template/product/search.twig
+CODE: <div class="image">
+LINE: 115
+
+FILE: catalog/view/theme/default/template/product/special.twig
+CODE: <div class="image">
+LINE: 72
+
+FILE: catalog/view/theme/default/template/extension/module/latest.twig
+CODE: <div class="image">
+LINE: 4
+
+FILE: catalog/view/theme/oc-light/template/extension/module/latest.twig
+CODE: <div class="image">
+LINE: 6
+
+FILE: catalog/view/theme/default/template/extension/module/bestseller.twig
+CODE: <div class="image">
+LINE: 5
+
+FILE: catalog/view/theme/oc-light/template/extension/module/bestseller.twig
+CODE: <div class="image">
+LINE: 7
+
+FILE: catalog/view/theme/default/template/extension/module/special.twig
+CODE: <div class="image">
+LINE: 4
+
+FILE: catalog/view/theme/default/template/extension/module/featured.twig
+CODE: <div class="image">
+LINE: 5
+
+FILE: catalog/view/theme/oc-light/template/extension/module/featured.twig
+CODE: <div class="image">
+LINE: 7
+CODE: {% for script in scripts %}
+LINE: 41
+CODE: {% for script in scripts %}
+LINE: 30
+----------------------------------------------------------------
+MOD: Доп фото слайдером в карточке товара
+CODE: $this->load->language('product/product');
+LINE: 12
+LINE: 557
+LINE: 600
+LINE: 644
+CODE: {% if images %}
+LINE: 29
+CODE: {% for image in images %}
+LINE: 33
+CODE: <li class="image-additional"><a class="thumbnail" href="{{ image.popup }}" title="{{ heading_title }}"> <img src="{{ image.thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a></li>
+LINE: 37
+CODE: {{ footer }}
+LINE: 585
+CODE: {% if images %}
+LINE: 29
+CODE: {% for image in images %}
+LINE: 33
+CODE: <li class="image-additional"><a class="thumbnail" href="{{ image.popup }}" title="{{ heading_title }}"> <img src="{{ image.thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" /></a></li>
+LINE: 37
+CODE: {{ footer }}
+LINE: 643
+----------------------------------------------------------------
+MOD: Пароль в письме о регистрации
+
+FILE: catalog/controller/mail/register.php
+CODE: $data['login'] = $this->url->link('account/login', '', true);
+LINE: 31
+
+FILE: catalog/view/theme/default/template/mail/register.twig
+CODE: {{ login }}
+LINE: 11
+LINE: 26
+
+FILE: catalog/language/ru-ru/mail/register.php
+CODE: <?php
+LINE: 4
+
+FILE: catalog/language/en-gb/mail/register.php
+CODE: <?php
+LINE: 4
+----------------------------------------------------------------
+MOD: Перетаскивание модулей в макетах
+
+FILE: admin/controller/design/layout.php
+CODE: protected function getForm() {
+LINE: 251
+
+FILE: admin/view/template/design/layout_form.twig
+CODE: {{ footer }}
+LINE: 445
+----------------------------------------------------------------
+MOD: Українська мова / Украинский язык
+----------------------------------------------------------------
+MOD: Форма авторизации в шапке
+CODE: </head>
+LINE: 60
+CODE: {{ language }}
+LINE: 81
+CODE: </head>
+LINE: 50
+CODE: {{ language }}
+LINE: 71
+----------------------------------------------------------------

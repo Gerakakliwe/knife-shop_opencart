@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<modification>
+	<name>OCappLab Alert In admin</name>
+	<version>1.0.0</version>
+	<code>ocapp_alert_in_admin</code>
+	<author>OCappLab</author>
+	<link>https://ocapplab.com/</link>
+	
+	<file path="admin/controller/common/header.php">
+		<operation>
+			<search><![CDATA[$this->load->model('user/user');]]></search>
+			<add position="before"><![CDATA[
+			// Orders
+			$this->load->model('sale/order');
+
+			// Processing Orders
+			$data['processing_status_total'] = $this->model_sale_order->getTotalOrders(array('filter_order_status' => implode(',', $this->config->get('config_processing_status'))));
+			$data['processing_status'] = $this->url->link('sale/order', 'user_token=' . $this->session->data['user_token'] . '&filter_order_status=' . implode(',', $this->config->get('config_processing_status')), true);
+
+			// Complete Orders
+			$data['complete_status_total'] = $this->model_sale_order->getTotalOrders(array('filter_order_status' => implode(',', $this->config->get('config_complete_status'))));
+			$data['complete_status'] = $this->url->link('sale/order', 'user_token=' . $this->session->data['user_token'] . '&filter_order_status=' . implode(',', $this->config->get('config_complete_status')), true);
+
+			// Returns
+			$this->load->model('sale/return');
+
+			$return_total = $this->model_sale_return->getTotalReturns(array('filter_return_status_id' => $this->config->get('config_return_status_id')));
+
+			$data['return_total'] = $return_total;
+
+			$data['return'] = $this->url->link('sale/return', 'user_token=' . $this->session->data['user_token'], true);
+
+			// Products
+			$this->load->model('catalog/product');
+
+			$product_total = $this->model_catalog_product->getTotalProducts(array('filter_quantity' => 0));
+
+			$data['product_total'] = $product_total;
+
+			$data['product'] = $this->url->link('catalog/product', 'user_token=' . $this->session->data['user_token'] . '&filter_quantity=0', true);
+
+			// Reviews
+			$this->load->model('catalog/review');
+
+			$review_total = $this->model_catalog_review->getTotalReviews(array('filter_status' => 0));
+
+			$data['review_total'] = $review_total;
+
+			$data['review'] = $this->url->link('catalog/review', 'user_token=' . $this->session->data['user_token'] . '&filter_status=0', true);
+
+			$data['alerts'] = $product_total + $review_total + $return_total;
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/view/template/common/header.twig">
+		<operation>
+			<search><![CDATA[<ul class="nav navbar-nav navbar-right">]]></search>
+			<add position="after"><![CDATA[
+			<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">{% if alerts > 0 %}<span style="position:absolute;top:15px;left:2px;" class="label label-danger pull-left">{{ alerts }}</span>{% endif %} <i class="fa fa-bell fa-lg"></i></a>
+			    <ul class="dropdown-menu dropdown-menu-right alerts-dropdown">
+			        <li class="dropdown-header">{{ text_order }}</li>
+			        <li><a href="{{ processing_status }}" style="display: block; overflow: auto;"><span class="label label-warning pull-right">{{ processing_status_total }}</span>{{ text_processing_status }}</a></li>
+			        <li><a href="{{ complete_status }}"><span class="label label-success pull-right">{{ complete_status_total }}</span>{{ text_complete_status }}</a></li>
+			        <li><a href="{{ return }}"><span class="label label-danger pull-right">{{ return_total }}</span>{{ text_return }}</a></li>
+			        <li class="divider"></li>
+			        <li class="dropdown-header">{{ text_product }}</li>
+			        <li><a href="{{ product }}"><span class="label label-danger pull-right">{{ product_total }}</span>{{ text_stock }}</a></li>
+			        <li><a href="{{ review }}"><span class="label label-danger pull-right">{{ review_total }}</span>{{ text_review }}</a></li>
+			    </ul>
+			</li>
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/language/en-gb/common/header.php">
+		<operation>
+			<search><![CDATA[$_['text_logout']        = 'Logout';]]></search>
+			<add position="after"><![CDATA[
+			$_['text_order']             = 'Orders';
+			$_['text_processing_status'] = 'Processing';
+			$_['text_complete_status']   = 'Completed';
+			$_['text_customer']          = 'Customers';
+			$_['text_online']            = 'Customers Online';
+			$_['text_approval']          = 'Pending approval';
+			$_['text_product']           = 'Products';
+			$_['text_stock']             = 'Out of stock';
+			$_['text_review']            = 'Reviews';
+			$_['text_return']            = 'Returns';
+			$_['text_affiliate']         = 'Affiliates';
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/language/ru-ru/common/header.php">
+		<operation>
+			<search><![CDATA[<?php]]></search>
+			<add position="after"><![CDATA[
+			$_['text_order']          		= 'Заказы';
+			$_['text_processing_status']    = 'В процессе';
+			$_['text_complete_status']      = 'Завершено';
+			$_['text_customer']          	= 'Покупатели';
+			$_['text_online']          		= 'Онлайн';
+			$_['text_approval']          	= 'В ожидании';
+			$_['text_product']          	= 'Товары';
+			$_['text_stock']          		= 'Нет в наличии';
+			$_['text_review']          		= 'Отзывы';
+			$_['text_return']          		= 'Возвраты';
+			$_['text_affiliate']          	= 'Партнерская программа';
+			]]></add>
+		</operation>
+	</file>
+</modification>
